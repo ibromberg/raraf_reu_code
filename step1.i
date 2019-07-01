@@ -1,24 +1,32 @@
 MCNP(X) Input File
 c                     --- CELL CARDS ---
 1  0              10       imp:n=0  $ void outside sphere
-2  200 -0.001225 -10 #3  imp:n=1  $ air inside sphere
-3  100 -1.07      -20 imp:n=1
+2  200 -0.001225 -10   imp:n=1  $ air inside sphere
+c 3  100 -1.07      -20 imp:n=1
 
 c                     --- SURFACE CARDS ---
 10 sph 0 0 0 200                    $ sphere of radius 2m centered on 0,0,0
-20 rpp -5 5   10 12.54   -5 5      $ 2.54cm=1in in z direction
+c 20 rpp -5 5   10 12.54   -5 5      $ 2.54cm=1in in z direction
 
 c                     --- DATA CARDS ---
 mode n
 c  - MATERIALS -
-m100 006012.50c -0.6113 008016.80c -0.222 001001.80c -0.1167 005011.80c -0.05
+c m100 006012.50c -0.6113 008016.80c -0.222 001001.80c -0.1167 005011.80c -0.05
 m200 007014.80c -0.78  008016.80c -0.22              $ air - 78 N, 22 O
 c   mesh tally block start-------
+c tmesh
+c rmesh3 total
+c cora3 -10 98i 10   $ x axis mesh
+c corb3 10 11    $ y axis mesh
+c corc3 -10 98i 10    $ z axis mesh
+c endmd
+c   mesh tally block end---------
+c   mesh tally block start-------
 tmesh
-rmesh3 total
-cora3 -7 98i 7   $ x axis mesh
-corb3 10 12.45    $ y axis mesh
-corc3 -7 98i 7    $ z axis mesh
+rmesh1:n traks
+cora1 -10 9i 10   $ x axis mesh
+corb1 10 11    $ y axis mesh
+corc1 -10 9i 10    $ z axis mesh
 endmd
 c   mesh tally block end---------
 c  - SOURCES -
@@ -75,10 +83,10 @@ SI3 -1 0.766 1 $ histogram for cosine bin limits
 SP3 0 0.883 0.117 $ frac. solid angle for each bin, for 40 degree cone
 SB3 0. 0. 1. $ source bias for each bin
 c  - TALLYING -
-*f1:n 20.3 
-E1 0.001 99i 0.1  $ tally energy
-*f11:n 20.4
-E11 0.001 99i 0.1  $ tally energy
+c *f1:n 20.3 
+c E1 0.001 99i 0.1  $ tally energy
+c *f11:n 20.4
+c E11 0.001 99i 0.1  $ tally energy
 print 110
 prdmp 2j 1
 nps 1e6
