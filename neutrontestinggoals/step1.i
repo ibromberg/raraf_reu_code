@@ -2,7 +2,7 @@ MCNP(X) Input File
 c                     --- CELL CARDS ---
 1  0              10       imp:n=0  $ void outside sphere
 2  200 -0.001225 -10 #3    imp:n=1  $ air inside sphere
-3  200 -0.001225 -20       imp:n=1  $ air inside rect prism for tally
+3  200 -0.001225      -20       imp:n=1  $ air inside rect prism for tally
 
 c                     --- SURFACE CARDS ---
 10 sph 0 0 0 200                    $ sphere of radius 2m centered on 0,0,0
@@ -76,7 +76,7 @@ SP3 0 0.883 0.117 $ frac. solid angle for each bin, for 40 degree cone
 SB3 0. 0. 1. $ source bias for each bin
 c  - TALLYING -
 *f1:n 20.3 
-E1 0.001 99i 0.1  $ tally energy
+E1 0.1 99i 10  $ tally energy
 c *f11:n 20.4
 c E11 0.001 99i 0.1  $ tally energy
 print 110
