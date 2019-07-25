@@ -23,14 +23,14 @@ c                     --- SURFACE CARDS ---
 60 wed -3 10 -0.5 0 9.5 0  0 0 0.45   6 0 0
 
 c                     --- DATA CARDS ---
-mode n
+mode n p
 c  - MATERIALS -
 m100 006012.50c -0.6113 008016.80c -0.222 001001.80c -0.1167 005011.80c -0.05
 m200 007014.80c -0.78  008016.80c -0.22              $ air - 78 N, 22 O
 m300 1001.80c -0.11190 8016.80c -0.8881              $ water
 c   mesh tally block start-------
 tmesh
-rmesh1:n dose 20 2
+rmesh1:p
 cora1 -3 49i 3   $ x axis mesh
 corb1 20 22    $ y axis mesh
 corc1 -5 49i 5    $ z axis mesh
@@ -94,22 +94,12 @@ f14:n 3
 DF14 IU=2 IC=20
 Fm14 2.7778E-4
 E14 0 9i 10
-fc14 neutron flux in mouse quarter 1
-c f24:n 8
-c DF24 IU=2 IC=20
-c Fm24 2.7778E-4
-c E24 0 99i 10
-c fc24 neutron flux in mouse quarter 2
+fc14 neutron flux in mouse edge
 f34:n 9
 DF34 IU=2 IC=20
 Fm34 2.7778E-4
 E34 0 9i 10
-fc34 neutron flux in mouse quarter 3
-c f44:n 10
-c DF44 IU=2 IC=20
-c Fm44 2.7778E-4
-c E44 0 99i 10
-c fc44 neutron flux in mouse quarter 4
+fc34 neutron flux in mouse middle
 print 110
 prdmp 2j 1
 nps 1e7
