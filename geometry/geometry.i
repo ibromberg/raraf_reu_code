@@ -2,9 +2,9 @@ MCNP(X) Input File
 c                     --- CELL CARDS ---
 1  0              10       imp:n=0  $ void outside sphere
 2  200 -0.001225 -10 #3 #4 #5 #6 #7 #8 #9 #10 imp:n=1  $ air inside sphere
-3  300 -1.0     -20       imp:n=1  $ mouse
+3  300 -1.0     -20       imp:n=1  $ mouse edge
 8  300 -1.0     -21       imp:n=1
-9  300 -1.0     -22       imp:n=1
+9  300 -1.0     -22       imp:n=1 $ mouse center
 10 300 -1.0     -23       imp:n=1
 4  100 -1.07     -30       imp:n=1  $ blocks
 5  100 -1.07     -40       imp:n=1
@@ -13,10 +13,10 @@ c                     --- CELL CARDS ---
 
 c                     --- SURFACE CARDS ---
 10 sph 0 0 0 200               $ universe sphere, 2m
-20 rpp -2 2  20 25  -5 -2.5      $ mouse phantom
-21 rpp -2 2  20 25  -2.5 0     
-22 rpp -2 2  20 25  0 2.5      
-23 rpp -2 2  20 25  2.5 5      
+20 rpp -2 2  20 25  -5 -4      $ mouse phantom (edge)
+21 rpp -2 2  20 25  -4 -0.5     
+22 rpp -2 2  20 25  -0.5 0.5   $ mouse phantom (center)
+23 rpp -2 2  20 25  0.5 5      
 30 rpp -3 3  10 19.5  -5.5 -0.5    $ blocks
 40 rpp -3 3  10 19.5  0.5 5.5
 50 wed -3 10 0.5  0 9.5 0  0 0 -0.45  6 0 0  $ wedges
@@ -93,23 +93,23 @@ c  - TALLYING -
 f14:n 3
 DF14 IU=2 IC=20
 Fm14 2.7778E-4
-E14 0 99i 10
+E14 0 9i 10
 fc14 neutron flux in mouse quarter 1
-f24:n 8
-DF24 IU=2 IC=20
-Fm24 2.7778E-4
-E24 0 99i 10
-fc24 neutron flux in mouse quarter 2
+c f24:n 8
+c DF24 IU=2 IC=20
+c Fm24 2.7778E-4
+c E24 0 99i 10
+c fc24 neutron flux in mouse quarter 2
 f34:n 9
 DF34 IU=2 IC=20
 Fm34 2.7778E-4
-E34 0 99i 10
+E34 0 9i 10
 fc34 neutron flux in mouse quarter 3
-f44:n 10
-DF44 IU=2 IC=20
-Fm44 2.7778E-4
-E44 0 99i 10
-fc44 neutron flux in mouse quarter 4
+c f44:n 10
+c DF44 IU=2 IC=20
+c Fm44 2.7778E-4
+c E44 0 99i 10
+c fc44 neutron flux in mouse quarter 4
 print 110
 prdmp 2j 1
 nps 1e7
