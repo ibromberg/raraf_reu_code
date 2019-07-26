@@ -1,11 +1,8 @@
 MCNP(X) Input File
 c                     --- CELL CARDS ---
 1  0              10       imp:n=0  $ void outside sphere
-2  200 -0.001225 -10 #3 #4 #5 #6 #7 #8 #9 #10 imp:n=1  $ air inside sphere
-3  300 -1.0     -20       imp:n=1  $ mouse edge
-8  300 -1.0     -21       imp:n=1
-9  300 -1.0     -22       imp:n=1 $ mouse center
-10 300 -1.0     -23       imp:n=1
+2  200 -0.001225 -10 #3 #4 #5 #6 #7 imp:n=1  $ air inside sphere
+3  300 -1.0      -20       imp:n=1  $ mouse edge
 4  100 -1.07     -30       imp:n=1  $ blocks
 5  100 -1.07     -40       imp:n=1
 6  100 -1.07     -50       imp:n=1  $ wedges
@@ -13,24 +10,21 @@ c                     --- CELL CARDS ---
 
 c                     --- SURFACE CARDS ---
 10 sph 0 0 0 200               $ universe sphere, 2m
-20 rpp -2 2  20 25  -5 -4      $ mouse phantom (edge)
-21 rpp -2 2  20 25  -4 -0.5     
-22 rpp -2 2  20 25  -0.5 0.5   $ mouse phantom (center)
-23 rpp -2 2  20 25  0.5 5      
-30 rpp -3 3  10 19.5  -5.5 -0.5    $ blocks
-40 rpp -3 3  10 19.5  0.5 5.5
-50 wed -3 10 0.5  0 9.5 0  0 0 -0.45  6 0 0  $ wedges
-60 wed -3 10 -0.5 0 9.5 0  0 0 0.45   6 0 0
+20 rpp -2 2  20 25  -5 5      $ mouse phantom
+30 rpp -3 3 10 19.5 -5.5 -1  $ blocks
+40 rpp -3 3 10 19.5 1 5.5 
+50 wed -3 19.5 1 0 -9.5 0 0 0 -0.5 6 0 0  $ wedges
+60 wed -3 19.5 -1 0 -9.5 0 0 0 0.5 6 0 0 
 
 c                     --- DATA CARDS ---
-mode n p
+mode n
 c  - MATERIALS -
 m100 006012.50c -0.6113 008016.80c -0.222 001001.80c -0.1167 005011.80c -0.05
 m200 007014.80c -0.78  008016.80c -0.22              $ air - 78 N, 22 O
 m300 1001.80c -0.11190 8016.80c -0.8881              $ water
 c   mesh tally block start-------
 tmesh
-rmesh1:p
+rmesh1:n
 cora1 -3 49i 3   $ x axis mesh
 corb1 20 22    $ y axis mesh
 corc1 -5 49i 5    $ z axis mesh
@@ -95,11 +89,6 @@ DF14 IU=2 IC=20
 Fm14 2.7778E-4
 E14 0 9i 10
 fc14 neutron flux in mouse edge
-f34:n 9
-DF34 IU=2 IC=20
-Fm34 2.7778E-4
-E34 0 9i 10
-fc34 neutron flux in mouse middle
 print 110
 prdmp 2j 1
 nps 1e7
