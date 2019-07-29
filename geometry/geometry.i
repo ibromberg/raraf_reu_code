@@ -2,7 +2,7 @@ MCNP(X) Input File
 c                     --- CELL CARDS ---
 1  0              10       imp:n=0  $ void outside sphere
 2  200 -0.001225 -10 #3 #4 #5 #6 #7 imp:n=1  $ air inside sphere
-3  300 -1.0      -20       imp:n=1  $ mouse edge
+3  300 -1.0      -20       imp:n=1  $ mouse
 4  100 -1.07     -30       imp:n=1  $ blocks
 5  100 -1.07     -40       imp:n=1
 6  100 -1.07     -50       imp:n=1  $ wedges
@@ -26,28 +26,29 @@ c   mesh tally block start-------
 tmesh
 c   front mesh
 rmesh1:n
-cora1 -1.27 49i 1.27   $ x axis mesh
-corb1 20 20.001    $ y axis mesh
-corc1 -5 49i 5    $ z axis mesh
+cora1 -1.27 23i 1.27   $ x axis mesh
+corb1 20 20.1    $ y axis mesh
+corc1 -5 98i 5    $ z axis mesh
 c   middle mesh
 rmesh21:n
-cora21 -1.27 49i 1.27   $ x axis mesh
-corb21 22.5 22.501    $ y axis mesh
-corc21 -5 49i 5    $ z axis mesh
+cora21 -1.27 23i 1.27   $ x axis mesh
+corb21 22.5 22.6    $ y axis mesh
+corc21 -5 98i 5    $ z axis mesh
 c   back mesh
 rmesh31:n
-cora31 -1.27 49i 1.27   $ x axis mesh
-corb31 24.999 25    $ y axis mesh
-corc31 -5 49i 5    $ z axis mesh
+cora31 -1.27 23i 1.27   $ x axis mesh
+corb31 24.9 25    $ y axis mesh
+corc31 -5 98i 5    $ z axis mesh
 c   yz plane mesh 
 rmesh41:n
-cora41 -0.5 0.5   $ x axis mesh
-corb41 20 49i 25    $ y axis mesh
-corc41 -5 49i 5    $ z axis mesh
+cora41 -0.05 0.05   $ x axis mesh
+corb41 20 48i 25    $ y axis mesh
+corc41 -5 98i 5    $ z axis mesh
 endmd
 c   mesh tally block end---------
 c  - SOURCES -
-SDEF POS=0 4.76 0 AXS=0 1 0 EXT=0 RAD=d1 PAR=1 ERG=d2 VEC=0 1 0 DIR=d3 WGT=8.547
+SDEF POS=0.5 4.76 0 AXS=0 1 0 EXT=0 RAD=d1 PAR=1 ERG=d2 VEC=0 1 0 DIR=d3 &
+     WGT=8.547
 SI1 0 0.75 $ radial sampling range: 0 to rmax
 SP1 -21 1 $ radial sampling weighting: r^1 for disk 
 SI2 H 0.1345 &  
@@ -104,7 +105,7 @@ f14:n 3
 DF14 IU=2 IC=20
 Fm14 2.7778E-4
 E14 0 9i 10
-fc14 neutron flux in mouse edge
+fc14 neutron flux in mouse
 print 110
 prdmp 2j 1
 nps 1e7
