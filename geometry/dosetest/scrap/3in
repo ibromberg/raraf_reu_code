@@ -30,9 +30,9 @@
   | PRIVATELY OWNED RIGHTS.                                             |
   +---------------------------------------------------------------------+
   
-1mcnp     version 6     ld=05/08/13                     07/30/19 12:13:38 
- *************************************************************************                 probid =  07/30/19 12:13:38 
- i=dosetest.i o=4in                                                              
+1mcnp     version 6     ld=05/08/13                     07/29/19 17:14:35 
+ *************************************************************************                 probid =  07/29/19 17:14:35 
+ i=dosetest.i o=3in                                                              
 
  
   warning.  Physics models disabled.
@@ -40,18 +40,19 @@
          2-       c                     --- CELL CARDS ---                                        
          3-       1  0              10       imp:n=0  $ void outside sphere                       
          4-       2  200 -0.001225 -10 #3 #4 imp:n=1  $ air inside sphere                         
-         5-       3  100 -1.07     -20       imp:n=1  $ shielding                                 
+         5-       3  200 -1.07     -20       imp:n=1  $ shielding                                 
          6-       4  300 -1.00     -30       imp:n=1  $ detector                                  
          7-                                                                                       
          8-       c                     --- SURFACE CARDS ---                                     
          9-       10 sph 0 0 0 200                    $ sphere of radius 2m centered on 0,0,0     
-        10-       20 rpp -15 15  10 20.16  -15 15      $ borated polyethylene                     
-        11-       30 rpp -15 15  25 45    -15 15      $ detector                                  
+        10-       20 rpp -15 15  10 17.62  -15 15      $ borated polyethylene                     
+        11-       30 rpp -15 15  25 26    -15 15      $ detector                                  
         12-                                                                                       
         13-       c                     --- DATA CARDS ---                                        
         14-       mode n                                                                          
         15-       c  - MATERIALS -                                                                
         16-       m100 006012.50c -0.6113 008016.80c -0.222 001001.80c -0.1167 005011.80c -0.05   
+  warning.  material      100 is not used in the problem.
         17-       m200 007014.80c -0.78  008016.80c -0.22              $ air - 78 N, 22 O         
         18-       m300 1001.80c -0.11190 8016.80c -0.8881              $ water                    
         19-       c  - SOURCES -                                                                  
@@ -112,14 +113,10 @@
         73-       f14:n 4                                                                         
         74-       DF14 IU=2 IC=20                                                                 
         75-       Fm14 2.7778E-4                                                                  
-        76-       E14 0 9i 10                                                                     
-        77-       f24:n 3                                                                         
-        78-       DF24 IU=2 IC=20                                                                 
-        79-       Fm24 2.7778E-4                                                                  
-        80-       E24 0 9i 10                                                                     
-        81-       print 110                                                                       
-        82-       prdmp 2j 1                                                                      
-        83-       nps 1e7                                                                         
+        76-       E14 0 99i 10                                                                    
+        77-       print 110                                                                       
+        78-       prdmp 2j 1                                                                      
+        79-       nps 1e7                                                                         
  
   comment.  total nubar used if fissionable isotopes are present.
 
@@ -135,7 +132,7 @@
  
   warning.     1 energy bins of tally       14 are below energy cutoff.
  
-  warning.     1 energy bins of tally       24 are below energy cutoff.
+  warning.    1 of the materials appear at more than one density.
 1cells                                                                                                  print table 60
 
                                atom        gram                                            neutron                                     
@@ -143,10 +140,10 @@
 
         1        1        0  0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00           0  0.0000E+00                                   
         2        2      200  5.12380E-05 1.22500E-03 0.00000E+00 0.00000E+00           0  1.0000E+00                                   
-        3        3      100  1.19307E-01 1.07000E+00 9.14400E+03 9.78408E+03           0  1.0000E+00                                   
-        4        4      300  1.00300E-01 1.00000E+00 1.80000E+04 1.80000E+04           0  1.0000E+00                                   
+        3        3      200  4.47548E-02 1.07000E+00 6.85800E+03 7.33806E+03           0  1.0000E+00                                   
+        4        4      300  1.00300E-01 1.00000E+00 9.00000E+02 9.00000E+02           0  1.0000E+00                                   
 
- total                                               2.71440E+04 2.77841E+04
+ total                                               7.75800E+03 8.23806E+03
 
     minimum source weight = 1.0000E+00    maximum source weight = 8.5470E+00
 
@@ -160,7 +157,7 @@
  ***************************************************
 
 
-         4 warning messages so far.
+         5 warning messages so far.
 1cross-section tables                                                                                   print table 100
      XSDIR used: C:\My_MCNP\MCNP_DATA/xsdir_mcnp6.1
 
@@ -170,16 +167,6 @@
 
  particle-production data for deuterons being expunged from   1001.80c
    1001.80c    3652  H1 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)          mat 125      12/17/12
-
-                        tables from file xdata/endf71x/B/5011.710nc                                      
-
- particle-production data for protons   being expunged from   5011.80c
- particle-production data for alphas    being expunged from   5011.80c
-   5011.80c   72132  B11 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)         mat 528      12/14/12
-
-                        tables from file xdata/rmccs                                                     
-
-   6012.50c   16126  njoy                                                                       (  1306)      79/07/31.
 
                         tables from file xdata/endf71x/N/7014.710nc                                      
 
@@ -196,7 +183,7 @@
  particle-production data for alphas    being expunged from   8016.80c
    8016.80c  171194  O16 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)         mat 825      12/13/12
 
-  total      330574
+  total      242316
 
 1particles and energy limits                                                                            print table 101
 
@@ -209,10 +196,10 @@
 
  ***********************************************************************************************************************
 
- dump no.    1 on file runtpg     nps =           0     coll =              0     ctm =        0.00   nrn =             
+ dump no.    1 on file runtph     nps =           0     coll =              0     ctm =        0.00   nrn =             
     0
 
-         4 warning messages so far.
+         5 warning messages so far.
 1starting mcrun.      cp0 =  0.00                                                                       print table 110
 
       MCNP(X) Input File                                                              
@@ -273,42 +260,42 @@
 1problem summary                                                                                                           
 
       run terminated when    10000000  particle histories were done.
-+                                                                                                    07/30/19 12:36:20 
-      MCNP(X) Input File                                                                   probid =  07/30/19 12:13:38 
++                                                                                                    07/29/19 17:15:53 
+      MCNP(X) Input File                                                                   probid =  07/29/19 17:14:35 
 
  neutron creation    tracks      weight        energy            neutron loss        tracks      weight        energy
                                  (per source particle)                                           (per source particle)
 
- source            10000000    1.0000E+00    1.1518E+00          escape             8449018    6.5743E-01    1.6150E-01
+ source            10000000    1.0000E+00    1.1518E+00          escape             9999288    9.7783E-01    9.0665E-01
  nucl. interaction        0    0.            0.                  energy cutoff            0    0.            0.        
  particle decay           0    0.            0.                  time cutoff              0    0.            0.        
  weight window            0    0.            0.                  weight window            0    0.            0.        
  cell importance          0    0.            0.                  cell importance          0    0.            0.        
- weight cutoff            0    3.8517E-02    1.4589E-09          weight cutoff      1550982    3.8536E-02    1.4595E-09
+ weight cutoff            0    1.6884E-05    1.0552E-05          weight cutoff          712    1.6397E-05    9.3107E-06
  e or t importance        0    0.            0.                  e or t importance        0    0.            0.        
  dxtran                   0    0.            0.                  dxtran                   0    0.            0.        
  forced collisions        0    0.            0.                  forced collisions        0    0.            0.        
  exp. transform           0    0.            0.                  exp. transform           0    0.            0.        
- upscattering             0    0.            4.2964E-07          downscattering           0    0.            9.8689E-01
- photonuclear             0    0.            0.                  capture                  0    3.4255E-01    3.4152E-03
+ upscattering             0    0.            5.9828E-11          downscattering           0    0.            1.8490E-01
+ photonuclear             0    0.            0.                  capture                  0    2.2165E-02    6.0254E-02
  (n,xn)                   0    0.            0.                  loss to (n,xn)           0    0.            0.        
  prompt fission           0    0.            0.                  loss to fission          0    0.            0.        
  delayed fission          0    0.            0.                  nucl. interaction        0    0.            0.        
  prompt photofis          0    0.            0.                  particle decay           0    0.            0.        
  tabular boundary         0    0.            0.                  tabular boundary         0    0.            0.        
  tabular sampling         0    0.            0.                  elastic scatter          0    0.            0.        
-     total         10000000    1.0385E+00    1.1518E+00              total         10000000    1.0385E+00    1.1518E+00
+     total         10000000    1.0000E+00    1.1518E+00              total         10000000    1.0000E+00    1.1518E+00
 
    number of neutrons banked                       0        average time of (shakes)              cutoffs
-   neutron tracks per source particle     1.0000E+00          escape            3.7856E+04          tco   1.0000E+33
-   neutron collisions per source particle 7.6797E+01          capture           1.1891E+04          eco   0.0000E+00
-   total neutron collisions                767973040          capture or escape 2.8962E+04          wc1  -5.0000E-01
-   net multiplication              1.0000E+00 0.0000          any termination   2.9159E+04          wc2  -2.5000E-01
+   neutron tracks per source particle     1.0000E+00          escape            1.5040E+02          tco   1.0000E+33
+   neutron collisions per source particle 2.0015E+00          capture           9.0336E+01          eco   0.0000E+00
+   total neutron collisions                 20015340          capture or escape 1.4907E+02          wc1  -5.0000E-01
+   net multiplication              1.0000E+00 0.0000          any termination   1.4929E+02          wc2  -2.5000E-01
 
- computer time so far in this run    22.65 minutes            maximum number ever in bank         0
- computer time in mcrun              22.64 minutes            bank overflows to backup file       0
- source particles per minute            4.4160E+05
- random numbers generated              13028704733            most random numbers used was       19879 in history     2357372
+ computer time so far in this run     1.30 minutes            maximum number ever in bank         0
+ computer time in mcrun               1.29 minutes            bank overflows to backup file       0
+ source particles per minute            7.7310E+06
+ random numbers generated                286357602            most random numbers used was        1080 in history     2507576
 
  range of sampled source weights = 1.0000E+00 to 1.0000E+00
 1neutron  activity in each cell                                                                         print table 126
@@ -317,11 +304,11 @@
               cell    entering                               * weight     weighted     weighted   track weight   track mfp
                                                           (per history)    energy       energy     (relative)      (cm)
 
-        2        2    23169438     10000000       779693    5.7145E-02   1.2284E-04   2.9748E-01   7.8988E-01   3.7367E+03
-        3        3    11640677      9991155    660195048    4.4094E+01   7.5106E-05   2.8031E-01   7.2657E-01   8.8415E-01
-        4        4     3060913      2109788    106998299    5.5574E+00   4.2299E-05   2.8140E-01   5.5806E-01   9.3716E-01
+        2        2    24812885     10000000       322765    3.1757E-02   7.9940E-02   9.1825E-01   9.7897E-01   7.4996E+03
+        3        3    10250362      9991155     15324497    1.5120E+00   2.0492E-01   9.4059E-01   9.8349E-01   8.8019E+00
+        4        4     4563223      4500807      4368078    4.3249E-01   3.1025E-02   9.3265E-01   9.8629E-01   2.1890E+00
 
-           total      37871028     22100943    767973040    4.9709E+01
+           total      39626470     24491962     20015340    1.9762E+00
 
 1tally       14        nps =    10000000
            tally type 4    track length estimate of particle flux.                             
@@ -332,22 +319,112 @@
 
            volumes 
                    cell:       4                                                                                   
-                         1.80000E+04
+                         9.00000E+02
  
  cell  4                                                                                                                               
       energy   
     0.0000E+00   0.00000E+00 0.0000
-    1.0000E+00   3.44494E-15 0.0015
-    2.0000E+00   1.55288E-15 0.0032
-    3.0000E+00   1.03618E-15 0.0042
-    4.0000E+00   7.16056E-16 0.0053
-    5.0000E+00   9.36897E-16 0.0051
-    6.0000E+00   6.72149E-16 0.0062
-    7.0000E+00   2.38030E-16 0.0104
-    8.0000E+00   6.98506E-17 0.0190
-    9.0000E+00   4.87608E-17 0.0231
-    1.0000E+01   6.40616E-18 0.0632
-      total      8.72214E-15 0.0017
+    1.0000E-01   3.25205E-15 0.0015
+    2.0000E-01   6.03537E-15 0.0015
+    3.0000E-01   1.45497E-14 0.0011
+    4.0000E-01   9.25641E-15 0.0016
+    5.0000E-01   7.94193E-15 0.0020
+    6.0000E-01   1.01338E-14 0.0018
+    7.0000E-01   8.33915E-15 0.0021
+    8.0000E-01   6.65676E-15 0.0025
+    9.0000E-01   5.43530E-15 0.0029
+    1.0000E+00   4.45557E-15 0.0033
+    1.1000E+00   5.31071E-15 0.0030
+    1.2000E+00   6.53270E-15 0.0026
+    1.3000E+00   5.68616E-15 0.0028
+    1.4000E+00   3.00705E-15 0.0039
+    1.5000E+00   3.23830E-15 0.0038
+    1.6000E+00   3.14208E-15 0.0038
+    1.7000E+00   2.35587E-15 0.0044
+    1.8000E+00   2.16535E-15 0.0046
+    1.9000E+00   2.15064E-15 0.0045
+    2.0000E+00   2.15194E-15 0.0044
+    2.1000E+00   1.73174E-15 0.0050
+    2.2000E+00   8.54643E-16 0.0075
+    2.3000E+00   8.55297E-16 0.0076
+    2.4000E+00   1.48796E-15 0.0055
+    2.5000E+00   1.89878E-15 0.0047
+    2.6000E+00   1.80147E-15 0.0048
+    2.7000E+00   1.77049E-15 0.0049
+    2.8000E+00   6.07022E-16 0.0088
+    2.9000E+00   5.89819E-16 0.0089
+    3.0000E+00   5.66365E-16 0.0090
+    3.1000E+00   5.84297E-16 0.0092
+    3.2000E+00   5.85464E-16 0.0091
+    3.3000E+00   5.52623E-16 0.0093
+    3.4000E+00   5.57695E-16 0.0093
+    3.5000E+00   5.50603E-16 0.0095
+    3.6000E+00   5.12500E-16 0.0098
+    3.7000E+00   5.22330E-16 0.0097
+    3.8000E+00   5.10170E-16 0.0097
+    3.9000E+00   5.63639E-16 0.0099
+    4.0000E+00   5.61360E-16 0.0095
+    4.1000E+00   5.92311E-16 0.0098
+    4.2000E+00   5.98867E-16 0.0098
+    4.3000E+00   6.10458E-16 0.0096
+    4.4000E+00   6.42540E-16 0.0092
+    4.5000E+00   9.95282E-16 0.0073
+    4.6000E+00   9.90888E-16 0.0073
+    4.7000E+00   1.04713E-15 0.0072
+    4.8000E+00   1.16790E-15 0.0068
+    4.9000E+00   1.08222E-15 0.0071
+    5.0000E+00   1.07709E-15 0.0071
+    5.1000E+00   1.03360E-15 0.0073
+    5.2000E+00   9.23741E-16 0.0076
+    5.3000E+00   9.46314E-16 0.0074
+    5.4000E+00   9.37354E-16 0.0074
+    5.5000E+00   9.25023E-16 0.0074
+    5.6000E+00   8.58460E-16 0.0077
+    5.7000E+00   6.61035E-16 0.0088
+    5.8000E+00   2.36069E-16 0.0152
+    5.9000E+00   2.36259E-16 0.0150
+    6.0000E+00   2.23277E-16 0.0151
+    6.1000E+00   2.26226E-16 0.0150
+    6.2000E+00   2.22314E-16 0.0151
+    6.3000E+00   2.16986E-16 0.0151
+    6.4000E+00   2.26522E-16 0.0147
+    6.5000E+00   2.15508E-16 0.0150
+    6.6000E+00   2.20384E-16 0.0150
+    6.7000E+00   2.11671E-16 0.0152
+    6.8000E+00   2.18520E-16 0.0148
+    6.9000E+00   1.99103E-16 0.0156
+    7.0000E+00   5.90410E-17 0.0322
+    7.1000E+00   5.55943E-17 0.0308
+    7.2000E+00   5.35036E-17 0.0310
+    7.3000E+00   5.11587E-17 0.0308
+    7.4000E+00   4.83567E-17 0.0322
+    7.5000E+00   5.03857E-17 0.0321
+    7.6000E+00   5.27393E-17 0.0307
+    7.7000E+00   4.99298E-17 0.0310
+    7.8000E+00   4.99468E-17 0.0311
+    7.9000E+00   5.53572E-17 0.0298
+    8.0000E+00   5.09491E-17 0.0305
+    8.1000E+00   5.75239E-17 0.0294
+    8.2000E+00   5.99738E-17 0.0284
+    8.3000E+00   5.63379E-17 0.0295
+    8.4000E+00   5.94283E-17 0.0283
+    8.5000E+00   5.67859E-17 0.0289
+    8.6000E+00   5.43304E-17 0.0297
+    8.7000E+00   1.80339E-17 0.0512
+    8.8000E+00   9.63738E-18 0.0702
+    8.9000E+00   1.01304E-17 0.0688
+    9.0000E+00   9.83695E-18 0.0694
+    9.1000E+00   9.40559E-18 0.0708
+    9.2000E+00   9.32734E-18 0.0713
+    9.3000E+00   8.21120E-18 0.0759
+    9.4000E+00   9.36909E-18 0.0707
+    9.5000E+00   8.09177E-18 0.0763
+    9.6000E+00   1.85975E-18 0.1622
+    9.7000E+00   0.00000E+00 0.0000
+    9.8000E+00   0.00000E+00 0.0000
+    9.9000E+00   0.00000E+00 0.0000
+    1.0000E+01   4.96051E-20 1.0000
+      total      1.48219E-13 0.0005
 
 
  ===================================================================================================================================
@@ -358,125 +435,67 @@
  behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
 
  desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
- observed     random        0.00      yes          yes            0.00      yes         yes            constant    random      10.00
- passed?        yes          yes      yes          yes             yes      yes         yes               yes        yes         yes
+ observed     random        0.00      yes          yes            0.00      yes         yes            increase    random      10.00
+ passed?        yes          yes      yes          yes             yes      yes         yes                no        yes         yes
 
  ===================================================================================================================================
 
 
- this tally meets the statistical criteria used to form confidence intervals: check the tally fluctuation chart to verify.
- the results in other bins associated with this tally may not meet these statistical criteria.
+ warning.  the tally in the tally fluctuation chart bin did not pass  1 of the 10 statistical checks.
 
- ----- estimated confidence intervals:  -----
-
- estimated asymmetric confidence interval(1,2,3 sigma): 8.7076E-15 to 8.7367E-15; 8.6931E-15 to 8.7512E-15; 8.6786E-15 to 8.7657E-15
- estimated  symmetric confidence interval(1,2,3 sigma): 8.7076E-15 to 8.7367E-15; 8.6931E-15 to 8.7512E-15; 8.6786E-15 to 8.7657E-15
-
- fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (4.416E+05)*( 1.899E-01)**2 = (4.416E+05)*(3.607E-02) = 1.593E+04
-
-1tally       24        nps =    10000000
-           tally type 4    track length estimate of particle flux.                             
-           particle(s): neutrons 
-           this tally is modified by standard dose function 1.
-
-           this tally is all multiplied by  2.77780E-04
-
-           volumes 
-                   cell:       3                                                                                   
-                         9.14400E+03
- 
- cell  3                                                                                                                               
-      energy   
-    0.0000E+00   0.00000E+00 0.0000
-    1.0000E+00   9.40862E-14 0.0003
-    2.0000E+00   3.81867E-14 0.0008
-    3.0000E+00   1.44242E-14 0.0014
-    4.0000E+00   8.02262E-15 0.0020
-    5.0000E+00   1.05859E-14 0.0019
-    6.0000E+00   7.99442E-15 0.0022
-    7.0000E+00   2.35723E-15 0.0041
-    8.0000E+00   6.59968E-16 0.0077
-    9.0000E+00   4.65326E-16 0.0093
-    1.0000E+01   5.85166E-17 0.0262
-      total      1.76841E-13 0.0003
-
-
- ===================================================================================================================================
-
-           results of 10 statistical checks for the estimated answer for the tally fluctuation chart (tfc) bin of tally       24
-
- tfc bin     --mean--      ---------relative error---------      ----variance of the variance----      --figure of merit--     -pdf-
- behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
-
- desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
- observed     random        0.00      yes          yes            0.00      yes         yes            constant    random      10.00
- passed?        yes          yes      yes          yes             yes      yes         yes               yes        yes         yes
-
- ===================================================================================================================================
-
-
- this tally meets the statistical criteria used to form confidence intervals: check the tally fluctuation chart to verify.
- the results in other bins associated with this tally may not meet these statistical criteria.
-
- ----- estimated confidence intervals:  -----
-
- estimated asymmetric confidence interval(1,2,3 sigma): 1.7679E-13 to 1.7690E-13; 1.7673E-13 to 1.7695E-13; 1.7668E-13 to 1.7701E-13
- estimated  symmetric confidence interval(1,2,3 sigma): 1.7679E-13 to 1.7690E-13; 1.7673E-13 to 1.7695E-13; 1.7668E-13 to 1.7701E-13
-
- fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (4.416E+05)*( 1.021E+00)**2 = (4.416E+05)*(1.042E+00) = 4.599E+05
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (7.731E+06)*( 6.833E-01)**2 = (7.731E+06)*(4.668E-01) = 3.609E+06
 
 1status of the statistical checks used to form confidence intervals for the mean for each tally bin
 
 
  tally   result of statistical checks for the tfc bin (the first check not passed is listed) and error magnitude check for all bins
 
-       14   passed the 10 statistical checks for the tally fluctuation chart bin result               
-         passed all bin error check:    12 tally bins had     1 bins with zeros and     0 bins with relative errors exceeding 0.10
-
-       24   passed the 10 statistical checks for the tally fluctuation chart bin result               
-         passed all bin error check:    12 tally bins had     1 bins with zeros and     0 bins with relative errors exceeding 0.10
+       14   missed  1 of 10 tfc bin checks: the figure of merit does not appear to be a constant for the last half of the problem     
+         missed all bin error check:   102 tally bins had     4 bins with zeros and     2 bins with relative errors exceeding 0.10
 
 
  the 10 statistical checks are only for the tally fluctuation chart bin and do not apply to other tally bins.
 
  the tally bins with zeros may or may not be correct: compare the source, cutoffs, multipliers, et cetera with the tally bins.
 
+ warning.       1 of the     1 tally fluctuation chart bins did not pass all 10 statistical checks.
+ warning.       1 of the     1 tallies had bins with relative errors greater than recommended.
 1tally fluctuation charts                              
 
-                            tally       14                          tally       24
-          nps      mean     error   vov  slope    fom      mean     error   vov  slope    fom
-       512000   8.8109E-15 0.0073 0.0002 10.0   16558   1.7702E-13 0.0014 0.0000 10.0  472616
-      1024000   8.7339E-15 0.0052 0.0001 10.0   16099   1.7676E-13 0.0010 0.0000 10.0  461834
-      1536000   8.7234E-15 0.0042 0.0001 10.0   15839   1.7666E-13 0.0008 0.0000 10.0  456824
-      2048000   8.7190E-15 0.0037 0.0000 10.0   15817   1.7677E-13 0.0007 0.0000 10.0  455536
-      2560000   8.7006E-15 0.0033 0.0000 10.0   15754   1.7678E-13 0.0006 0.0000 10.0  455175
-      3072000   8.6983E-15 0.0030 0.0000 10.0   15680   1.7677E-13 0.0006 0.0000 10.0  452789
-      3584000   8.7034E-15 0.0028 0.0000 10.0   15649   1.7676E-13 0.0005 0.0000 10.0  451417
-      4096000   8.7031E-15 0.0026 0.0000 10.0   15649   1.7680E-13 0.0005 0.0000 10.0  451930
-      4608000   8.7067E-15 0.0025 0.0000 10.0   15781   1.7685E-13 0.0005 0.0000 10.0  455582
-      5120000   8.7103E-15 0.0023 0.0000 10.0   15812   1.7687E-13 0.0004 0.0000 10.0  456749
-      5632000   8.7183E-15 0.0022 0.0000 10.0   15836   1.7689E-13 0.0004 0.0000 10.0  457252
-      6144000   8.7182E-15 0.0021 0.0000 10.0   15837   1.7688E-13 0.0004 0.0000 10.0  457482
-      6656000   8.7149E-15 0.0020 0.0000 10.0   15819   1.7686E-13 0.0004 0.0000 10.0  457011
-      7168000   8.7109E-15 0.0020 0.0000 10.0   15765   1.7685E-13 0.0004 0.0000 10.0  455360
-      7680000   8.7093E-15 0.0019 0.0000 10.0   15748   1.7687E-13 0.0004 0.0000 10.0  454805
-      8192000   8.7115E-15 0.0018 0.0000 10.0   15724   1.7685E-13 0.0003 0.0000 10.0  454099
-      8704000   8.7157E-15 0.0018 0.0000 10.0   15770   1.7683E-13 0.0003 0.0000 10.0  455612
-      9216000   8.7171E-15 0.0017 0.0000 10.0   15843   1.7682E-13 0.0003 0.0000 10.0  457459
-      9728000   8.7177E-15 0.0017 0.0000 10.0   15909   1.7683E-13 0.0003 0.0000 10.0  459290
-     10000000   8.7221E-15 0.0017 0.0000 10.0   15930   1.7684E-13 0.0003 0.0000 10.0  459941
+                            tally       14
+          nps      mean     error   vov  slope    fom
+       512000   1.4792E-13 0.0020 0.0001 10.0 3611384
+      1024000   1.4795E-13 0.0014 0.0000 10.0 3524673
+      1536000   1.4787E-13 0.0012 0.0000 10.0 3548688
+      2048000   1.4796E-13 0.0010 0.0000 10.0 3496090
+      2560000   1.4799E-13 0.0009 0.0000 10.0 3498610
+      3072000   1.4811E-13 0.0008 0.0000 10.0 3482454
+      3584000   1.4806E-13 0.0008 0.0000  9.3 3468544
+      4096000   1.4811E-13 0.0007 0.0000 10.0 3469007
+      4608000   1.4810E-13 0.0007 0.0000 10.0 3453371
+      5120000   1.4814E-13 0.0006 0.0000 10.0 3468662
+      5632000   1.4815E-13 0.0006 0.0000  8.8 3496711
+      6144000   1.4817E-13 0.0006 0.0000  7.7 3515818
+      6656000   1.4816E-13 0.0006 0.0000 10.0 3537320
+      7168000   1.4819E-13 0.0005 0.0000 10.0 3551737
+      7680000   1.4818E-13 0.0005 0.0000 10.0 3564896
+      8192000   1.4817E-13 0.0005 0.0000 10.0 3581505
+      8704000   1.4816E-13 0.0005 0.0000 10.0 3592771
+      9216000   1.4818E-13 0.0005 0.0000 10.0 3603483
+      9728000   1.4820E-13 0.0005 0.0000 10.0 3611992
+     10000000   1.4822E-13 0.0005 0.0000 10.0 3609148
 
  ***********************************************************************************************************************
 
- dump no.    2 on file runtpg     nps =    10000000     coll =      767973040     ctm =       22.64   nrn =      
- 13028704733
- tally data written to file mctan
+ dump no.    2 on file runtph     nps =    10000000     coll =       20015340     ctm =        1.29   nrn =        
+ 286357602
+ tally data written to file mctao
 
-         4 warning messages so far.
+         8 warning messages so far.
 
 
  run terminated when    10000000  particle histories were done.
 
- computer time =   22.65 minutes
+ computer time =    1.30 minutes
 
- mcnp     version 6     05/08/13                     07/30/19 12:36:20                     probid =  07/30/19 12:13:38 
+ mcnp     version 6     05/08/13                     07/29/19 17:15:53                     probid =  07/29/19 17:14:35 

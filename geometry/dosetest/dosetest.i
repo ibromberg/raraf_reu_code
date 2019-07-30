@@ -2,13 +2,13 @@ MCNP(X) Input File
 c                     --- CELL CARDS ---
 1  0              10       imp:n=0  $ void outside sphere
 2  200 -0.001225 -10 #3 #4 imp:n=1  $ air inside sphere
-3  200 -1.07     -20       imp:n=1  $ shielding
+3  100 -1.07     -20       imp:n=1  $ shielding
 4  300 -1.00     -30       imp:n=1  $ detector
 
 c                     --- SURFACE CARDS ---
 10 sph 0 0 0 200                    $ sphere of radius 2m centered on 0,0,0
 20 rpp -15 15  10 12.54  -15 15      $ borated polyethylene
-30 rpp -15 15  25 26    -15 15      $ detector
+30 rpp -15 15  25 45    -15 15      $ detector
 
 c                     --- DATA CARDS ---
 mode n
@@ -73,7 +73,11 @@ c  - TALLYING -
 f14:n 4
 DF14 IU=2 IC=20
 Fm14 2.7778E-4
-E14 0 99i 10
+E14 0 9i 10
+f24:n 3
+DF24 IU=2 IC=20
+Fm24 2.7778E-4
+E24 0 9i 10
 print 110
 prdmp 2j 1
 nps 1e7

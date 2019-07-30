@@ -47,7 +47,7 @@ corc41 -5 98i 5    $ z axis mesh
 endmd
 c   mesh tally block end---------
 c  - SOURCES -
-SDEF POS=0 -15.4 0 AXS=0 1 0 EXT=0 RAD=d1 PAR=1 ERG=d2 VEC=0 1 0 DIR=d3 &
+SDEF POS=3 4.76 3 AXS=0 1 0 EXT=0 RAD=d1 PAR=1 ERG=d2 VEC=0 1 0 DIR=d3 &
      WGT=8.547
 SI1 0 0.75 $ radial sampling range: 0 to rmax
 SP1 -21 1 $ radial sampling weighting: r^1 for disk 
