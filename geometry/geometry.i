@@ -13,8 +13,8 @@ c                     --- SURFACE CARDS ---
 20 rpp -1.27 1.27  20 25  -5 5      $ mouse phantom
 30 rpp -2 2  10 19.5  -5.5 -0.5    $ blocks 
 40 rpp -2 2  10 19.5  0.5 5.5 
-50 wed -2 10 0.5  0 9.5 0  0 0 -0.4  4 0 0  $ wedges
-60 wed -2 10 -0.5 0 9.5 0  0 0 0.4   4 0 0 
+50 wed -2 10 0.5  0 9.5 0  0 0 -0.1  4 0 0  $ wedges
+60 wed -2 10 -0.5 0 9.5 0  0 0 0.1   4 0 0 
 
 c                     --- DATA CARDS ---
 mode n
@@ -47,7 +47,7 @@ corc41 -5 98i 5    $ z axis mesh
 endmd
 c   mesh tally block end---------
 c  - SOURCES -
-SDEF POS=3 4.76 3 AXS=0 1 0 EXT=0 RAD=d1 PAR=1 ERG=d2 VEC=0 1 0 DIR=d3 &
+SDEF POS=0 4.76 0 AXS=0 1 0 EXT=0 RAD=d1 PAR=1 ERG=d2 VEC=0 1 0 DIR=d3 &
      WGT=8.547
 SI1 0 0.75 $ radial sampling range: 0 to rmax
 SP1 -21 1 $ radial sampling weighting: r^1 for disk 
