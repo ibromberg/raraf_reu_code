@@ -1,0 +1,26 @@
+input file basics
+
+	message block +
+
+	one line problem title card
+	cell cards [block 1]
+
+	surface cards [block 2]
+
+	data cards [block 3]
+
+comments: $
+units: length in cm, energy MeV, time in shakes 10^-8s, temperature in MeV (kT), atom density in atoms 1/b-cm, mass density in g/cm3, cross section in barns
+
+how to run the .i file: MCNP6 I=filename.i
+
+admin pw: VC11240!
+linux subsystem un/pw: ibromberg/raraf, edit and view files in /mnt/c/My_MCNP/My_CODE if you want to use vim
+
+
+linux <-> windows commands: https://www.lemoda.net/windows/windows2unix/windows2unix.html
+
+mcnp primer: https://www.mne.k-state.edu/~jks/MCNPprmr.pdf
+user manual, etc: file:///C:/My_MCNP/ABOUT_MCNP.html
+
+questions: rdum is...? google said it's cross sections total and absolute? idum?
